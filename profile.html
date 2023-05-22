@@ -116,40 +116,73 @@
         </div>
         <div class="nav-profile">
             <ul>
-                <li><a href="#" > خانه</a> </li>
-                <li><a href="#" style="background-color: greenyellow" >سفارش ها</a> </li>
-                <li><a href="#">  دانلود ها</a> </li>
+                <li><a  onclick="home()" > خانه</a> </li>
+                <li><a  onclick="order()" >سفارش ها</a> </li>
+                <li><a  onclick="downloads()">  دانلود ها</a> </li>
                 <li><a href="#">  خروج</a> </li>
             </ul>
 
         </div>
     </div>
-    <div class="left">
-        <table>
-            <tr>
-                <th>
-                    کد سفارش
-                </th>
-                <th>
-                    محصول
-                </th>
-                <th>
-                    وضعیت
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    12
-                </td>
-                <td>
-                    دوره آموزش وردپرس
-                </td>
-                <td>
-                    <span style =' background-color: white ; padding: 0px 30px; border-radius: 5px'>تکمیل</span>
-                </td>
-            </tr>
-        </table>
+    <div class="left" id="left">
     </div>
 </div>
+<script>
+    function home(){
+        document.getElementById('left').innerHTML='سلام به پنل کاربری خوش آمدی';
+    }
+    function order(){
+        document.getElementById('left').innerHTML='        <table>\n' +
+            '            <tr>\n' +
+            '                <th>\n' +
+            '                    کد سفارش\n' +
+            '                </th>\n' +
+            '                <th>\n' +
+            '                    محصول\n' +
+            '                </th>\n' +
+            '                <th>\n' +
+            '                    وضعیت\n' +
+            '                </th>\n' +
+            '            </tr>\n' +
+            '            <tr>\n' +
+            '                <td>\n' +
+            '                    12\n' +
+            '                </td>\n' +
+            '                <td>\n' +
+            '                    دوره آموزش وردپرس\n' +
+            '                </td>\n' +
+            '                <td>\n' +
+            '                    <span style =\' background-color: white ; padding: 0px 30px; border-radius: 5px\'>تکمیل</span>\n' +
+            '                </td>\n' +
+            '            </tr>\n' +
+            '        </table>'
+    }
+    function downloads(){
+        document.getElementById('left').innerHTML='        <table>\n' +
+            '            <tr>\n' +
+            '                <th>\n' +
+            '                    کد سفارش\n' +
+            '                </th>\n' +
+            '                <th>\n' +
+            '                    محصول\n' +
+            '                </th>\n' +
+            '                <th>\n' +
+            '                    وضعیت\n' +
+            '                </th>\n' +
+            '            </tr>\n' +
+            '            <tr>\n' +
+            '                <td>\n' +
+            '                    12\n' +
+            '                </td>\n' +
+            '                <td>\n' +
+            '                    دوره آموزش وردپرس\n' +
+            '                </td>\n' +
+            '                <td>\n' +
+            '                    <span style =\' background-color: white ; padding: 0px 30px; border-radius: 5px\'>دانلود</span>\n' +
+            '                </td>\n' +
+            '            </tr>\n' +
+            '        </table>'
+    }
+</script>
 </body>
 </html>
