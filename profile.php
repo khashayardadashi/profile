@@ -106,6 +106,20 @@
 
 
     </style>
+    <?php
+    if(isset($_POST['btn'])){
+    $username=$_POST['username'];
+    $email=$_POST['email'];
+    $password=$_POST['password'];
+    setcookie(
+    'login-detail',
+    $username.$email.$password,
+    [
+    'expires'=>time()+60,
+    ]
+    );
+    }
+    ?>
     </head>
 <body>
 <div class="main">
@@ -114,9 +128,14 @@
             <img src="21104.png">
             <div style="font-size:15px;margin-top: 1px">
             <?php
+            $password=$_POST['password'];
             $username=$_POST['username'];
+            $email=$_POST['email'];
                 if(isset($_POST['btn'])){
                     echo $username;
+                    $mysql=mysqli_connect('localhost:3306','root','khashayar1383','php');
+                    $function="INSERT INTO USERS (username ,email,pass ) VALUES ('$username','$email','$password')";
+                    mysqli_query($mysql,$function);
                 }
                 else{
                     echo($_SERVER['SERVER_ADDR']);
@@ -129,7 +148,7 @@
                 <li><a  onclick="home()" > خانه</a> </li>
                 <li><a  onclick="order()" >سفارش ها</a> </li>
                 <li><a  onclick="downloads()">  دانلود ها</a> </li>
-                <li><a href="login.php"> خروج </a> </li>
+                <li><a href="seasion1.php"> خروج </a> </li>
             </ul>
 
         </div>
