@@ -129,7 +129,7 @@
                 <li><a  onclick="home()" > خانه</a> </li>
                 <li><a  onclick="order()" >سفارش ها</a> </li>
                 <li><a  onclick="downloads()">  دانلود ها</a> </li>
-                <li><a href="seasion1.php"> خروج </a> </li>
+                <li><a href="login.php"> خروج </a> </li>
             </ul>
 
         </div>
