@@ -22,7 +22,7 @@
         .right{
             float: right;
             margin-right: 100px;
-            background-color: skyblue;
+            background-color: #8696FE;
             width: 30%;
             height: 500px;
             border-radius: 10px;
@@ -32,7 +32,7 @@
         .left{
             float: left;
             width: 55%;
-            background-color: deepskyblue;
+            background-color:#C4B0FF;
             margin-left: 100px;
             height: 500px;
             border-radius: 10px;
@@ -112,14 +112,24 @@
     <div class="right">
         <div class="img-profile">
             <img src="21104.png">
-            <div style="font-size:15px;margin-top: 1px">خشایار داداشی</div>
+            <div style="font-size:15px;margin-top: 1px">
+            <?php
+            $username=$_POST['username'];
+                if(isset($_POST['btn'])){
+                    echo $username;
+                }
+                else{
+                    echo($_SERVER['SERVER_ADDR']);
+                }
+             ?>
+            </div>
         </div>
         <div class="nav-profile">
             <ul>
                 <li><a  onclick="home()" > خانه</a> </li>
                 <li><a  onclick="order()" >سفارش ها</a> </li>
                 <li><a  onclick="downloads()">  دانلود ها</a> </li>
-                <li><a href="#">  خروج</a> </li>
+                <li><a href="seasion1.php"> خروج </a> </li>
             </ul>
 
         </div>
