@@ -131,11 +131,17 @@
             $password=$_POST['password'];
             $username=$_POST['username'];
             $email=$_POST['email'];
+            <?php
+            $password=$_POST['password'];
+            $username=$_POST['username'];
+            $email=$_POST['email'];
                 if(isset($_POST['btn'])){
                     echo $username;
                     $mysql=mysqli_connect('localhost:3306','root','khashayar1383','php');
-                    $function="INSERT INTO USERS (username ,email,pass ) VALUES ('$username','$email','$password')";
-                    mysqli_query($mysql,$function);
+                    $function=mysqli_prepare($mysql,"INSERT INTO USERS (username ,email,pass ) VALUES (?,?,?)");
+                    $type='sss';
+                    mysqli_stmt_bind_param($function,$type, $username,$email,$password);
+                    mysqli_stmt_execute($function);
                 }
                 else{
                     echo($_SERVER['SERVER_ADDR']);
