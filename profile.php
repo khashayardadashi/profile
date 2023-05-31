@@ -137,7 +137,7 @@
             $email=$_POST['email'];
                 if(isset($_POST['btn'])){
                     echo $username;
-                    $mysql=mysqli_connect('localhost:3306','root','khashayar1383','php');
+                    $mysql=mysqli_connect('localhost:3306','root','','php');
                     $function=mysqli_prepare($mysql,"INSERT INTO USERS (username ,email,pass ) VALUES (?,?,?)");
                     $type='sss';
                     mysqli_stmt_bind_param($function,$type, $username,$email,$password);
